@@ -3,3 +3,5 @@
 @import "base/typography.css";
 @import "pages/index.css";
 @import "components/markdown.css";
+@import "components/sidebar.css";
+@import "components/application.css";
