@@ -1,6 +1,9 @@
 {
   "dependencies": {
     "@mistralai/mistralai": "^2.5.0",
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
   }
 }
