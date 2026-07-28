@@ -49,8 +49,8 @@ chatForm.addEventListener('submit', async (e) => {
                         
                         if (parsed.content) {
                             botResponseText += parsed.content;
-                            // Aktualizacja tekstu w locie
-                            botMessageDiv.innerText = botResponseText;
+                            const rawHtml = marked.parse(botResponseText);
+                            botMessageDiv.innerHTML = DOMPurify.sanitize(rawHtml);
                             chatWindow.scrollTop = chatWindow.scrollHeight;
                         }
                     } catch (e) {
