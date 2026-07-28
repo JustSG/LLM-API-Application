@@ -60,6 +60,7 @@ chatForm.addEventListener('submit', async (e) => {
             }
         }
 
+        console.log(botResponseText);
         // 5. Po zakończeniu streamu zapisz pełną odpowiedź w historii
         conversationHistory.push({ role: 'assistant', content: botResponseText });
 
