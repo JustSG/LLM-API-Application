@@ -15,12 +15,10 @@ export async function sendMessage(req, res) {
         const responseStream = await streamChat(messages);
 
         for await (const chunk of responseStream) {
-            const content =
-                chunk.choices?.[0]?.delta?.content ||
-                chunk.data?.choices?.[0]?.delta?.content;
+            const content = chunk.data?.choices?.[0]?.delta?.content;
 
             if (content) {
-                res.write(`Data: ${JSON.stringify({ content })}\n\n`);
+                res.write(`data: ${JSON.stringify({ content })}\n\n`);
             }
         }
         res.end();
