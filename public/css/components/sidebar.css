@@ -23,6 +23,12 @@
   height: 2rem;
   margin-bottom: 1.5rem;
   position: relative;
+  border-radius: 12px;
+  transition: background 0.2s ease
+}
+
+.toggle-btn:hover {
+  background: #f2f2f2;
 }
 
 .toggle-btn svg {
@@ -67,7 +73,7 @@
 }
 
 .new-chat-btn {
-  border: 1px solid var(--color-black);
+  border: none;
   border-radius: 12px;
   padding: 0.75rem;
   background: var(--color-white);
@@ -90,10 +96,10 @@
 .tool-item {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  border: 1px solid var(--color-black);
+  gap: 1rem;
   border-radius: 12px;
-  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--spacing);
+  padding: 0.8rem 1rem;
   transition: background 0.2s ease;
 }
 
