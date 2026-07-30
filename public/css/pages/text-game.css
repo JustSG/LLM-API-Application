@@ -1,0 +1,23 @@
+
+
+.decision-buttons-container
+{
+  display: flex;
+}
+
+.decision-buttons-container > button
+{
+  width: 25%;
+  margin: 2px;
+  padding: 2px;
+}
+
+.selected-decision
+{
+  background-color: hsl(215, 40%, 70%);
+}
+
+.message{
+  max-width: 100%;
+  width: 100%;
+}
