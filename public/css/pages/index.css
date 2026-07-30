@@ -1,37 +1,83 @@
-body {
-  background-color: #f4f6f9;
+body{
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
 }
 
-.chat-container {
-  width: 100%;
-  max-width: 600px;
-  height: 80vh;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+main {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
-header {
-  background: #2f3e46;
-  color: white;
-  padding: 15px;
-  text-align: center;
+.tool-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tool-title {
+  margin: 0;
+  font-size: var(--fs-lg);
+}
+
+.info-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.info-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 130%;
+  right: 0;
+  width: 14rem;
+  background: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: var(--color-white-alt);
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 10;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 0.5rem;
+  border-width: 0.4rem;
+  border-style: solid;
+  border-color: transparent transparent rgba(26, 26, 26, 0.7) transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.info-wrapper:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 .chat-window {
   flex: 1;
-  padding: 20px;
   overflow-y: auto;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 2rem;
 }
 
 .message {
@@ -56,29 +102,30 @@ header {
 
 .chat-form {
   display: flex;
-  padding: 15px;
-  border-top: 1px solid #e9ecef;
-  background: #fff;
+  gap: 0.75rem;
+  padding: 1rem 1rem;
+  border-top: 1px solid var(--color-bg-alt);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .chat-form input {
   flex: 1;
-  padding: 12px;
-  border: 1px solid #ced4da;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--spacing);
   border-radius: 6px;
   outline: none;
   font-size: 16px;
 }
 
 .chat-form button {
-  margin-left: 10px;
-  padding: 12px 20px;
-  background: #007bff;
-  color: white;
+  padding: 0.8rem 0.9rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 0.5rem;
+  background: #007bff;
+  color: var(--color-white);
   cursor: pointer;
   font-weight: bold;
+  transition: background 0.2s ease;
 }
 
 .chat-form button:hover {

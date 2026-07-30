@@ -1,51 +1,74 @@
 <!DOCTYPE html>
-<html lang="pl">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mistral AI Chat</title>
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mistral AI Chat</title>
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
-    <div id="sidebar">
-        <div id="options">
-            <div class="option">New chat</div>
-        </div>
-        <hr>
-        <div id="tools">
-            <div class="tool">
-                <img src="img/chat.svg">
-                <p>Chat</p>
-            </div>
-            <div class="tool">
-                <img src="img/summary.svg">
-                <p>Text summary</p>
-            </div>
-            <div class="tool">
-                <img src="img/game.svg">
-                <p>Text RPG game</p>
-            </div>
-        </div>
-    </div>
-    <main>
-        <div id="content">
-            <header>
-                <h2>Mistral AI Assistant</h2>
-            </header>
-            <div id="chat-window" class="chat-window">
-                <!-- Tutaj będą pojawiać się wiadomości -->
-            </div>
-            <form id="chat-form" class="chat-form">
-                <input type="text" id="user-input" placeholder="Napisz wiadomość..." required autocomplete="off">
-                <button type="submit">Wyślij</button>
-            </form>
-        </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
-    <script src="js/script.js"></script>
-</body>
 
+  <aside class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="sidebar-toggle" aria-label="Zwiń/rozwiń panel">
+      <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
+      </svg>
+    </button>
+
+    <div class="sidebar-content">
+      <button class="new-chat-btn">New chat</button>
+
+      <nav class="tool-list">
+        <a href="/chatbot" class="tool-item">
+          <img src="assets/img/chat.svg" class="tool-icon">
+          <span class="tool-label">Chat</span>
+        </a>
+        <a href="/document-summary" class="tool-item">
+          <img src="assets/img/summary.svg" class="tool-icon">
+          <span class="tool-label">Document summary</span>
+        </a>
+        <a href="/language-learning" class="tool-item">
+          <img src="assets/img/lang.svg" class="tool-icon">
+          <span class="tool-label">Language learning</span>
+        </a>
+        <a href="/text-rpg" class="tool-item">
+          <img src="assets/img/game.svg" class="tool-icon">
+          <span class="tool-label">RPG text game</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <main>
+    <header class="tool-header">
+      <h1 class="tool-title">Chat</h1>
+
+      <div class="info-wrapper">
+        <img class="info-img" src="assets/img/info.svg">
+        <div class="tooltip">
+          Chat freely with your AI assistant. Ask questions, get help with code, writing, or everyday tasks.
+        </div>
+      </div>
+    </header>
+
+    <div id="chat-window" class="chat-window">
+      <!-- Messages here -->
+    </div>
+
+    <form id="chat-form" class="chat-form">
+      <input type="text" id="user-input" placeholder="Write message..." required autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+  <script src="/js/sidebar.js"></script>
+  <script src="/js/script.js"></script>
+
+</body>
 </html>

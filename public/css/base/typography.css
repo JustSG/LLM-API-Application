@@ -1,3 +1,33 @@
-* {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/blinkmacsystemfont-regular.ttf") format("ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Header";
+  src: url("/fonts/GemunuLibre-Regular.ttf") format("ttf");
+  font-display: swap;
+}
+
+html {
+  font-family: var(--font-base);
+  font-size: var(--fs-base);
+  color: var(--color-text-black);
+}
+
+h1 {
+  font-size: var(--fs-xl);
+  font-family: var(--font-heading);
+  margin: 0 0 0.75rem;
+}
+
+p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  white-space: nowrap;
 }

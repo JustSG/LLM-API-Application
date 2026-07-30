@@ -1,51 +1,111 @@
-#sidebar {
-  width: 300px;
-  height: 100vh;
-  background-color: hsl(210, 20%, 94%);
-  color: #111;
-}
-
-
-.option {
-  font-size: 18px;
-  height: 60px;
-  border: 1px solid hsl(210, 5%, 80%);
-  margin: 10px;
-  padding: 15px;
-  text-align: center;
-  transition: box-shadow 0.3s;
-  border-radius: 5px;
-}
-
-.option:hover {
-  background-color: hsl(210, 5%, 80%);
-  cursor: pointer;
-}
-
-#sidebar>hr {
-  margin: 20px 10px;
-  border: 1px solid hsl(210, 5%, 80%);
-}
-
-.tool {
-  border: 1px solid hsl(210, 5%, 80%);
-  margin: 10px;
+.sidebar {
+  width: 18rem;
+  border-right: 1px solid var(--spacing);
   display: flex;
-  transition: box-shadow 0.3s;
-  border-radius: 5px;
+  flex-direction: column;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: width 0.25s ease, padding 0.25s ease;
+  overflow: hidden;
 }
 
-.tool:hover {
-  background-color: hsl(210, 5%, 80%);
+.sidebar.collapsed {
+  width: 4rem;
+  padding: 1rem 1rem;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
-.tool>img {
-  height: 32px;
-  margin: 10px;
+.toggle-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.tool>p {
-  font-size: 18px;
-  margin: 12px 5px;
+.icon-arrow {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.icon-burger {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.sidebar.collapsed .icon-arrow {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.sidebar.collapsed .icon-burger {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 14rem;
+}
+
+.sidebar.collapsed .sidebar-content {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.new-chat-btn {
+  border: 2px solid var(--color-black);
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: var(--color-white);
+  cursor: pointer;
+  margin-bottom: 2.5rem;
+  transition: background 0.2s ease;
+}
+
+.new-chat-btn:hover {
+  background: #f2f2f2;
+}
+
+.tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: auto;
+}
+
+.tool-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border: 2px solid var(--color-black);
+  border-radius: 12px;
+  padding: 0.6rem 0.8rem;
+  transition: background 0.2s ease;
+}
+
+.tool-item:hover {
+  background: #f2f2f2;
+}
+
+.tool-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  flex-shrink: 0;
 }
