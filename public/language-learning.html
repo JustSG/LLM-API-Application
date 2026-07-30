@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +9,21 @@
 </head>
 
 <body>
+  <button class="toggle-btn" id="sidebar-toggle">
+    <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
+    </svg>
+  </button>
 
   <aside class="sidebar" id="sidebar">
-    <button class="toggle-btn" id="sidebar-toggle" aria-label="Zwiń/rozwiń panel">
-      <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-      <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
-      </svg>
-    </button>
-
     <div class="sidebar-content">
-      <a href="/" class="tool-item">
-          <img src="assets/img/plus.svg" class="tool-icon">
-          <span class="tool-label">New Chat</span>
-        </a>
+      <a href="/" class="tool-item new-chat-btn new-chat-btn">
+        <img src="assets/img/plus.svg" class="tool-icon">
+        <span class="tool-label">New Chat</span>
+      </a>
 
       <nav class="tool-list">
         <a href="/" class="tool-item">
@@ -65,4 +65,5 @@
   <script src="/js/sidebar.js"></script>
 
 </body>
+
 </html>
