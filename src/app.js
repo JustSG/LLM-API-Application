@@ -23,4 +23,9 @@ app.get('/rpg-game', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'text-game.html'));
 });
 
+app.get('/language-learning', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'language-learning.html'));
+});
+
+
 export default app;

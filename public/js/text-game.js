@@ -4,7 +4,7 @@ const userInput = document.getElementById('user-input');
 let conversationHistory = [];
 let initialPromptSended = false;
 
-sendPrompt("You are an API for text RPG game with user. Create a interesting but short simple story. Tell what is happening and after that give 4 short decisions in plain text in format\n [A - First decision]\n[B - Second decision]\n[C - Third decision]\n[D - Fourth decision]\nYou will be send corresponding letter. Set the game language to Polish.");
+sendPrompt("You are an API for text RPG game with user. Create a interesting but simple story. Tell what is happening and after that give 4 short decisions in plain text in format\n [A - First decision]\n[B - Second decision]\n[C - Third decision]\n[D - Fourth decision]\nYou will be send corresponding letter. Set the game language to Polish."); // Temporarily set to Polish for testing
 
 // Send initial prompt
 /*

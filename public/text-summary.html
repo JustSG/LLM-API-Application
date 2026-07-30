@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,10 @@
     </button>
 
     <div class="sidebar-content">
-      <button class="new-chat-btn">New chat</button>
+      <a href="/" class="tool-item">
+        <img src="assets/img/plus.svg" class="tool-icon">
+        <span class="tool-label">New Chat</span>
+      </a>
 
       <nav class="tool-list">
         <a href="/" class="tool-item">
@@ -45,18 +49,24 @@
   </aside>
 
   <main>
-    <div id="content">
-      <header>
-        <h2>Text summary</h2>
-      </header>
-      <div id="chat-window" class="chat-window">
-        <!-- Tutaj będą pojawiać się wiadomości -->
+    <header class="tool-header">
+      <h1 class="tool-title">Text summary</h1>
+
+      <div class="info-wrapper">
+        <img class="info-img" src="assets/img/info.svg">
+        <div class="tooltip">
+          Summarize the most important informations from large pieces of text
+        </div>
       </div>
-      <form id="chat-form">
-        <textarea type="text" id="user-input" placeholder="Paste here text to summarize..." required></textarea>
-        <button type="submit">Wyślij</button>
-      </form>
+    </header>
+    <div id="chat-window" class="chat-window">
+      
     </div>
+
+    <form id="chat-form" class="chat-form">
+      <textarea type="text" id="user-input" placeholder="Paste text to summarize here..." required autocomplete="off"></textarea>
+      <button type="submit">Send</button>
+    </form>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>

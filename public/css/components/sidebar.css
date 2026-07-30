@@ -98,8 +98,7 @@
   align-items: center;
   gap: 1rem;
   border-radius: 12px;
-  border: 1px solid var(--spacing);
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 0.8rem;
   transition: background 0.2s ease;
 }
 
