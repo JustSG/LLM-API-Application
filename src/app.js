@@ -15,11 +15,11 @@ app.use(express.static('public'));
 
 app.use('/api/chat', chatRoutes);
 
-app.get('/summary', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'summary.html'));
+app.get('/text-summary', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'text-summary.html'));
 });
 
-app.get('/text-game', (req, res) => {
+app.get('/rpg-game', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'text-game.html'));
 });
 
