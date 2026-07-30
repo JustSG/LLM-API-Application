@@ -5,7 +5,7 @@ const client = new Mistral({ apiKey: mistralApiKey });
 
 export async function streamChat(messages) {
   return client.chat.stream({
-    model: 'mistral-small-latest', 
+    model: 'mistral-medium-latest', 
     messages,
   });
 }

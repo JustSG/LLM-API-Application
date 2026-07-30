@@ -94,10 +94,15 @@
   margin-top: 3rem;
 }
 
+.new-chat-btn:hover {
+  background: hsl(0, 0%, 90%);
+}
+
 .new-chat-btn .tool-icon{
   width: 1.5rem;
   height: 1.5rem;
 }
+
 
 .tool-list {
   display: flex;
@@ -111,12 +116,12 @@
   align-items: center;
   gap: 1rem;
   border-radius: 12px;
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 0.8rem;
   transition: background 0.2s ease;
 }
 
 .tool-item:hover {
-  background: #f2f2f2;
+  background: hsl(0, 0%, 90%);
 }
 
 .tool-icon {

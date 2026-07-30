@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mistral AI Chat</title>
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pages/text-game.css">
 </head>
 
 <body>
-  <button class="toggle-btn" id="sidebar-toggle">
-    <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
-    <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
-    </svg>
-  </button>
 
   <aside class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="sidebar-toggle" aria-label="Zwiń/rozwiń panel">
+      <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
+      </svg>
+    </button>
+
     <div class="sidebar-content">
-      <a href="/" class="tool-item new-chat-btn">
-          <img src="assets/img/plus.svg" class="tool-icon">
-          <span class="tool-label">New Chat</span>
-        </a>
+      <a href="/" class="tool-item">
+        <img src="assets/img/plus.svg" class="tool-icon">
+        <span class="tool-label">New Chat</span>
+      </a>
 
       <nav class="tool-list">
         <a href="/" class="tool-item">
@@ -44,34 +47,26 @@
       </nav>
     </div>
   </aside>
- 
+
   <main>
     <header class="tool-header">
-      <h1 class="tool-title">Chat</h1>
+      <h1 class="tool-title">RPG Text Game</h1>
 
       <div class="info-wrapper">
         <img class="info-img" src="assets/img/info.svg">
         <div class="tooltip">
-          Chat freely with your AI assistant. Ask questions, get help with code, writing, or everyday tasks.
+          Play a RPG style text game. AI tells you the story and situation you are in. Each time you need to make decision by choosing one of four actions.
         </div>
       </div>
     </header>
-
     <div id="chat-window" class="chat-window">
-      <!-- Messages here -->
+      <!-- Tutaj będą pojawiać się wiadomości -->
     </div>
-
-    <form id="chat-form" class="chat-form">
-      <textarea id="user-input" placeholder="Write message..." rows="1"></textarea>
-      <button type="submit">Send</button>
-    </form>
   </main>
-
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
   <script src="/js/sidebar.js"></script>
-  <script src="/js/textarea.js"></script>
-  <script src="/js/script.js"></script>
-
+  <script src="/js/text-game.js"></script>
 </body>
+
 </html>
