@@ -25,7 +25,7 @@ chatForm.addEventListener('submit', async (e) => {
     });
 
     if (!response.ok) {
-      throw new Error('Błąd połączenia z serwerem.');
+      throw new Error('Error while connecting to the server.');
     }
 
     const reader = response.body.getReader();
@@ -61,7 +61,7 @@ chatForm.addEventListener('submit', async (e) => {
 
   } catch (error) {
     console.error(error);
-    botMessageDiv.innerText = 'Wystąpił błąd podczas pobierania odpowiedzi.';
+    botMessageDiv.innerText = 'An error occurred while fetching the response.';
     botMessageDiv.style.color = 'red';
   }
 });

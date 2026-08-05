@@ -1,8 +1,8 @@
 import { streamChat } from '../services/mistralai.service.js';
 
-const prompt = `You are an API for a text RPG game with the user. Create an interesting but simple story. Tell what is happening and after that give 4 short decisions in plain text in format:\n[A - First decision]\n[B - Second decision]\n[C - Third decision]\n[D - Fourth decision]\nYou will be sent the corresponding letter as the user's next message.`;
+const prompt = `Read the following text carefully and create a comprehensive summary.\n\nRequirements:\n- Preserve all key information and main ideas.\n- Remove repetition, digressions, and non-essential details.\n- Do not add opinions, assumptions, or information not present in the original text.\n- Maintain the original meaning and logical flow.\n- Include important numbers, dates, names, definitions, and technical terms whenever they are essential for understanding.\n- If something cannot be inferred from the text, do not speculate.\n- If the text contains arguments or a sequence of events, preserve their order.\n- Use clear, concise, and neutral language. \nOutput format: \nExecutive Summary Write a concise summary in 3–5 sentences. \nText:\n\n`;
 
-export async function playTurn(req, res) {
+export async function summarize(req, res) {
   const { messages } = req.body;
 
   if (!messages || !Array.isArray(messages)) {
@@ -16,12 +16,10 @@ export async function playTurn(req, res) {
   try {
     const fullMessages = [{ role: 'system', content: prompt }, ...messages];
     const responseStream = await streamChat(fullMessages);
-    let botResponseText = '';
 
     for await (const chunk of responseStream) {
       const content = chunk.data?.choices?.[0]?.delta?.content;
       if (content) {
-        botResponseText += content;
         res.write(`data: ${JSON.stringify({ content })}\n\n`);
       }
     }
