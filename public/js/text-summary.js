@@ -10,10 +10,12 @@ chatForm.addEventListener('submit', async (e) => {
   const text = userInput.value.trim();
   if (!text) return;
 
+  appendMessage(text, 'user-message');
   conversationHistory.push({ role: 'user', content: text });
   userInput.value = '';
+  userInput.style.height = 'auto';
+  userInput.style.overflowY = 'hidden';
 
-  chatWindow.innerHTML = '';
   const botMessageDiv = appendMessage('', 'bot-message');
 
   try {

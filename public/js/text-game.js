@@ -111,6 +111,7 @@ function renderDecisionButtons(botMessageDiv) {
 function appendMessage(text, className) {
   const messageDiv = document.createElement('div');
   messageDiv.classList.add('message-game', className);
+  messageDiv.classList.add('message', className);
   messageDiv.innerText = text;
   chatWindow.appendChild(messageDiv);
   chatWindow.scrollTop = chatWindow.scrollHeight;
