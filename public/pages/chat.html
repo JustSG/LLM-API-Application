@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mistral AI Chat</title>
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/pages/summary.css">
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
@@ -18,8 +17,8 @@
       <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
     </svg>
   </button>
-  <aside class="sidebar" id="sidebar">
 
+  <aside class="sidebar" id="sidebar">
     <div class="sidebar-content">
       <a href="/" class="tool-item new-chat-btn">
         <img src="assets/img/plus.svg" class="tool-icon">
@@ -39,7 +38,7 @@
           <img src="assets/img/lang.svg" class="tool-icon">
           <span class="tool-label">Language learning</span>
         </a>
-        <a href="/rpg-game" class="tool-item">
+        <a href="/text-game" class="tool-item">
           <img src="assets/img/game.svg" class="tool-icon">
           <span class="tool-label">RPG text game</span>
         </a>
@@ -49,29 +48,32 @@
 
   <main>
     <header class="tool-header">
-      <h1 class="tool-title">Text summary</h1>
+      <h1 class="tool-title">Chat</h1>
 
       <div class="info-wrapper">
         <img class="info-img" src="assets/img/info.svg">
         <div class="tooltip">
-          Summarize the most important information from large pieces of text.
+          Chat freely with your AI assistant. Ask questions, get help with code, writing, or everyday tasks.
         </div>
       </div>
     </header>
-    <div id="chat-window" class="chat-window">
 
+    <div id="chat-window" class="chat-window">
+      <!-- Messages here -->
     </div>
 
     <form id="chat-form" class="chat-form">
-      <textarea type="text" id="user-input" placeholder="Paste text to summarize here..." required
-        autocomplete="off"></textarea>
+      <textarea id="user-input" placeholder="Write message..." rows="1"></textarea>
       <button type="submit">Send</button>
     </form>
   </main>
+
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
-  <script src="/js/sidebar.js"></script>
-  <script src="/js/text-summary.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/textarea.js"></script>
+  <script src="../js/index.js"></script>
+
 </body>
 
 </html>
