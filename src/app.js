@@ -14,6 +14,7 @@ app.use(express.static('public'));
 
 app.use('/', pageRoutes);
 app.use('/api/chat', chatRouter);
+app.use('/api/text-game', textGameRouter);
 app.use('/api/text-summary', textSummaryRouter);
 
 export default app;
